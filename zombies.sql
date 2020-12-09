@@ -45,3 +45,12 @@ INNER JOIN bitings
 ON bitings.victim_id = victims.id
 INNER JOIN zombies 
 ON zombies.id = bitings.zombie_id;
+
+-- we might want to see a view that shows us a list of victims names, 
+-- the zombie who bit them 
+-- and the date they got infected.
+SELECT victims.name, zombies.name, bitings.infected_on FROM victims 
+INNER JOIN bitings
+ON bitings.victim_id = victims.id
+INNER JOIN zombies 
+ON zombies.id = bitings.zombie_id;
